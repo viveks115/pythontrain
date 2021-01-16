@@ -47,7 +47,7 @@ def plot_stop():
 root = tk.Tk()
 root.title('REFLOW PROFILE')
 root.configure(background='light blue')
-root.geometry("700x500")  # set the window size
+root.geometry("1900x1080")  # set the window size
 
 # ------create Plot object on GUI----------
 # add figure canvas
@@ -63,17 +63,17 @@ ax.set_ylim(0, 300)
 lines = ax.plot([], [])[0]
 
 canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
-canvas.get_tk_widget().place(x=10, y=10, width=500, height=400)
+canvas.get_tk_widget().place(x=300, y=60, width=1000, height=600)
 canvas.draw()
 
 # ----------create button---------
 root.update();
 start = tk.Button(root, text="Start", font=('calbiri', 12), command=lambda: plot_start())
-start.place(x=100, y=450)
+start.place(x=700, y=700)
 
 root.update();
 stop = tk.Button(root, text="Stop", font=('calbiri', 12), command=lambda: plot_stop())
-stop.place(x=start.winfo_x() + start.winfo_reqwidth() + 20, y=450)
+stop.place(x=start.winfo_x() + start.winfo_reqwidth() + 20, y=700)
 
 # ----start serial port----
 s = sr.Serial('COM4', 9600);
