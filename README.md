@@ -1,2 +1,0 @@
-# pythontrain
-Beginers Study
